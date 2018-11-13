@@ -3,10 +3,13 @@ import { Text, View, StyleSheet } from 'react-native';
 
 const PresentationalComponent = (props) => {
   return (
-    <View>
-      <Text style = {styles.myState} onPress = {props.updateState}>
+    <View style = {styles.container}>
+      {/* <Text style = {styles.myState} onPress = {props.updateState}>
         {props.myState}
-      </Text>
+      </Text> */}
+      <View style = {styles.redbox}/>
+      <View style = {styles.bluebox}/>
+      <View style = {styles.greenbox}/>
     </View>
   );
 }
@@ -14,11 +17,29 @@ const PresentationalComponent = (props) => {
 export default PresentationalComponent;
 
 const styles = StyleSheet.create ({
-  myState: {
-    marginTop: 20,
-    textAlign: 'center',
-    color: 'blue',
-    fontWeight: 'bold',
-    fontSize: 20
+  container: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'grey',
+    height: 600
+  },
+  
+  redbox: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'red'
+  },
+
+  bluebox: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'blue'
+  },
+
+  greenbox: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'green'
   }
 });

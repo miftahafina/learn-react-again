@@ -28,9 +28,10 @@ export default class App extends React.Component {
   render() {
     return (
       <View>
-        <PresentationalComponent myState = {this.state.myState1} updateState = {this.updateState1} />
+        {/* <PresentationalComponent myState = {this.state.myState1} updateState = {this.updateState1} />
         <PresentationalComponent myState = {this.state.myState2} updateState = {this.updateState2} />
-        <PresentationalComponent myState = {this.state.myState3} updateState = {this.updateState3} />
+        <PresentationalComponent myState = {this.state.myState3} updateState = {this.updateState3} /> */}
+        <PresentationalComponent />
       </View>
     );
   }
