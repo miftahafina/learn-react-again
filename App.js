@@ -4,25 +4,33 @@ import PresentationalComponent from './PresentationalComponent';
 
 export default class App extends React.Component {
   state = {
-    myState: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, used do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    myState2: 'Haiiahh'
+    myState1: 'State 1',
+    myState2: 'State 2',
+    myState3: 'State 3'
   }
 
-  updateState = () => {
+  updateState1 = () => {
     return this.setState({
-      myState: 'The state is updated'
+      myState1: 'State 1 updated'
     });
   }
 
   updateState2 = () => this.setState({
-    myState2: 'This state is also updated'
+    myState2: 'State 2 updated'
   });
+
+  updateState3 = () => this.setState({
+    myState3: 'State 3 updated'
+  });
+
+  // update
 
   render() {
     return (
       <View>
-        <PresentationalComponent myState = {this.state.myState} updateState = {this.updateState} />
+        <PresentationalComponent myState = {this.state.myState1} updateState = {this.updateState1} />
         <PresentationalComponent myState = {this.state.myState2} updateState = {this.updateState2} />
+        <PresentationalComponent myState = {this.state.myState3} updateState = {this.updateState3} />
       </View>
     );
   }
