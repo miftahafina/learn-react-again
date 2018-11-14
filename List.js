@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, ActivityIndicator, Text, TouchableOpacity, View, StyleSheet } from "react-native";
+import { FlatList, ActivityIndicator, Text, TouchableOpacity, View, StyleSheet, ScrollView } from "react-native";
 
 export default class List extends React.Component {
   constructor (props) {
@@ -17,7 +17,7 @@ export default class List extends React.Component {
   }
 
   componentDidMount = () => {
-    fetch('http://miftahafina.klik.press/api/person', {
+    fetch('http://miftahafina.klik.press/api/person/', {
       method: 'GET'
     })
     .then((response) => response.json())
@@ -40,14 +40,14 @@ export default class List extends React.Component {
   render () {
     if (this.state.isLoading) {
       return(
-        <TouchableOpacity style = {styles.default} onPress = {this.updateState}>
+        <TouchableOpacity style={styles.default} onPress={this.updateState}>
           <ActivityIndicator />
         </TouchableOpacity>
       )
     }
 
     return (
-      <View>
+      <ScrollView>
         {
           this.state.data.map((item, index) => (
             <TouchableOpacity style = {styles.default} onPress = {() => this.alertCellNumber(item)} key = {item.id_person}>
@@ -55,7 +55,7 @@ export default class List extends React.Component {
             </TouchableOpacity>
           ))
         }
-      </View>
+      </ScrollView>
     )
   }
 }
