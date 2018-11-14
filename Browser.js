@@ -5,19 +5,19 @@ export default class Browser extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      address: 'https://google.com/'
+      address: 'google.com'
     }
   }
 
   handleAddress = (address) => {
-    this.setState({ address: 'http://'+address })
+    this.setState({ address: address })
   }
 
   render () {
     return (
       <View style={styles.container}>
-        <TextInput placeholder='http://' autoCapitalize='none' onChangeText={this.handleAddress}/>
-        <WebView source={{ uri: this.state.address }}/>
+        <TextInput autoCapitalize='none' onChangeText={this.handleAddress} value={this.state.address}/>
+        <WebView source={{ uri: 'http://google.com/search?q=' + this.state.address }}/>
       </View>
     )
   }
